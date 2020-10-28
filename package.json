@@ -1,0 +1,35 @@
+{
+  "name": "adoptapet",
+  "version": "1.0.0",
+  "description": "Find Adoptable pets near the user",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lopez42512/AdoptAPet.git"
+  },
+  "keywords": [
+    "ejs",
+    "express",
+    "html",
+    "css",
+    "bootstrap",
+    "javascript",
+    "api"
+  ],
+  "author": "Ismael Lopez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lopez42512/AdoptAPet/issues"
+  },
+  "homepage": "https://github.com/Lopez42512/AdoptAPet#readme",
+  "dependencies": {
+    "@petfinder/petfinder-js": "^1.0.6",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-favicon": "^2.0.1"
+  }
+}

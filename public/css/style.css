@@ -1,0 +1,13 @@
+body {
+    background-color: #fcf1f1;
+    text-align: center;
+    margin: 0;
+}
+/* Header */
+#header {
+    margin-bottom: 5%;
+}
+.navbar {
+    background-color: #ffd5cd;
+    padding: 3%;
+}
