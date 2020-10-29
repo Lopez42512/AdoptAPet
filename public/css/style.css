@@ -1,13 +1,64 @@
 body {
-    background-color: #fcf1f1;
-    text-align: center;
-    margin: 0;
+  background-color: #ebebeb;
+  text-align: center;
+  margin: 0;
 }
 /* Header */
 #header {
-    margin-bottom: 5%;
+  margin: auto;
+  text-align: center;
+  background-color: #389393;
+  padding: 1%;
 }
-.navbar {
-    background-color: #ffd5cd;
-    padding: 3%;
+
+.navbar-nav {
+  margin: auto;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* Card Display */
+.row {
+  /* margin: auto;
+    width: 100%; */
+}
+.card {
+  /* margin: 20px; */
+  background-color: #ebebeb;
+  margin: auto;
+  padding: 1%;
+  border: none;
+  /* margin-bottom: 50px; */
+}
+img {
+  height: 250px;
+  border-radius: 2%;
+  /* width: 100%; */
+}
+
+/* Adopt A Pet Page */
+.carousel {
+  margin: auto;
+  width: 50%;
+}
+
+/* Body */
+#body {
+  padding: 5% 10%;
+}
+
+/* Footer */
+#footer {
+  margin: auto;
+  margin-bottom: 0px;
+  text-align: center;
+  background-color: #f5a25d;
+  padding: 1%;
+  color: grey;
+  margin-top: 2%;
+}
+#footer h6 {
+  margin-bottom: 0px;
 }

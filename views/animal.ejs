@@ -1,19 +1,41 @@
 <%- include("partials/header") -%>
-
-<div class="container-fluid">
-  <div class="row">
-    <% animals.forEach(animal => { %> <% if (animal.photo[0] === undefined) { %>
-    <% } else { %>
-    <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem">
-      <img src="<%= animal.photo[0].full %>" class="card-img-top" alt="..." />
-      <div class="card-body">
-        <h5 class="card-title"><%= animal.name %></h5>
-        <p class="card-text"><%= animal.desc %></p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<section id="body">
+  <div class="container-fluid">
+    <div class="row">
+      <% animals.forEach(animal => { %> <% if (animal.photo[0] === undefined) {
+      %> <% } else { %>
+      <div class="card col-lg-4 col-md-6 col-sm-12" id="<%= animal.id %>">
+        <img src="<%= animal.photo[0].full %>" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title"><%= animal.name %></h5>
+          <h6>
+            <%= animal.contact.address.city %>, <%= animal.contact.address.state
+            %>
+          </h6>
+          <!-- <p class="card-text"><%= animal.desc %></p> -->
+          <form action="/adopt" method="post">
+            <button
+              name="id"
+              value="<%= animal.id %>"
+              class="btn btn-lg btn-primary"
+              type="submit"
+            >
+              Learn More
+            </button>
+          </form>
+        </div>
       </div>
+      <% } %> <% }) %>
     </div>
-    <% } %> <% }) %>
+    <form action="/findAPet" method="post">
+      <% if(pagenumber === 1) { %>
+      <button type="submit">Next Page</button>
+      <% } else { %>
+      <button type="submit" name="previous">Previous Page</button>
+      <button type="submit" name="next">Next Page</button>
+      <% } %>
+    </form>
   </div>
-</div>
+</section>
 
 <%- include("partials/footer") -%>
