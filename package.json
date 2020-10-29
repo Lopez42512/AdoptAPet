@@ -4,6 +4,7 @@
   "description": "Find Adoptable pets near the user",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,6 +20,9 @@
     "javascript",
     "api"
   ],
+  "engines": {
+    "node": "13.8"
+  },
   "author": "Ismael Lopez",
   "license": "ISC",
   "bugs": {
