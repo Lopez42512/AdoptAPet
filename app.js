@@ -86,6 +86,6 @@ app.post("/adopt", function(req,res) {
       getAnimal();
 })
 
-app.listen(3000, function (req, res) {
+app.listen(process.env.PORT || 3000, function (req, res) {
   console.log("APP listening on PORT 3000");
 });
