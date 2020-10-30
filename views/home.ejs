@@ -1,19 +1,8 @@
 <%- include("partials/header") -%>
-<section id="body">
-    <div class="container-fluid">
-        <div class="row">
-          <% animals.forEach(animal => { %> <% if (animal.photo[0] === undefined) { %>
-          <% } else { %>
-          <div class="card col-lg-4 col-md-6 col-sm-12" style="width: 18rem">
-            <img src="<%= animal.photo[0].full %>" class="card-img-top" alt="..." />
-            <div class="card-body">
-              <h5 class="card-title"><%= animal.name %></h5>
-              <p class="card-text"><%= animal.desc %></p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-          </div>
-          <% } %> <% }) %>
-        </div>
+<section>
+    <div style="padding: 0;" class="container-fluid">
+        <img class="homeImg" src="https://wallpapercave.com/wp/kvDvzAF.jpg" alt="">
+    </div>
 </section>
 
  

@@ -72,8 +72,9 @@ app.post("/findAPet", function (req, res) {
   getAnimal();
 });
 
-app.post("/adopt", function(req,res) {
-    const selectedAnimal = req.body.id;
+app.post("/adopt/id=:animalID", function(req,res) {
+    console.log(req.params)
+    const selectedAnimal = req.params.animalID;
     async function getAnimal() {
         await client.animal
           .show(selectedAnimal)

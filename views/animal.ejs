@@ -13,10 +13,8 @@
             %>
           </h6>
           <!-- <p class="card-text"><%= animal.desc %></p> -->
-          <form action="/adopt" method="post">
+          <form action="/adopt/id=<%= animal.id %>" method="post">
             <button
-              name="id"
-              value="<%= animal.id %>"
               class="btn btn-lg btn-primary"
               type="submit"
             >
