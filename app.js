@@ -72,7 +72,22 @@ app.post("/findAPet", function (req, res) {
   getAnimal();
 });
 
-app.post("/adopt/id=:animalID", function(req,res) {
+app.get("/adopt/:animalID", function(req,res) {
+    console.log(req.params)
+    const selectedAnimal = req.params.animalID;
+    async function getAnimal() {
+        await client.animal
+          .show(selectedAnimal)
+          .then((resp) => {
+            //   console.log(resp.data.animal);
+            const animalData = resp.data.animal
+            res.render("adopt", { selectedAnimalData: animalData});
+          })
+      }
+      getAnimal();
+})
+
+app.post("/adopt/:animalID", function(req,res) {
     console.log(req.params)
     const selectedAnimal = req.params.animalID;
     async function getAnimal() {
