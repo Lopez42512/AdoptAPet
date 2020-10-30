@@ -1,5 +1,5 @@
 body {
-  background-color: #ebebeb;
+  background-color: #eeeeee;
   text-align: center;
   margin: 0;
 }
@@ -7,7 +7,7 @@ body {
 #header {
   margin: auto;
   text-align: center;
-  background-color: #389393;
+  background-color: #76ead7;
   padding: 1%;
 }
 
@@ -26,7 +26,7 @@ a:hover {
 }
 .card {
   /* margin: 20px; */
-  background-color: #ebebeb;
+  background-color: #eeeeee;
   margin: auto;
   padding: 1%;
   border: none;
@@ -54,7 +54,8 @@ img {
   margin: auto;
   margin-bottom: 0px;
   text-align: center;
-  background-color: #f5a25d;
+  background-color: #393e46;
+
   padding: 1%;
   color: grey;
   margin-top: 2%;
