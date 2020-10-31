@@ -2,6 +2,18 @@
 <section>
     <div style="padding: 0;" class="container-fluid">
         <img class="homeImg" src="https://wallpapercave.com/wp/kvDvzAF.jpg" alt="">
+        <div class="homeContainer">
+            <h3 class="homeTitle">Find Animals Near You!</h3>
+            <form class="form-inline zipForm" action="/findAPet" method="post">
+                
+                <div class="form-group mx-sm-3 mb-2">
+                    <label for="inputzipCode" class="sr-only">Enter Zip Code</label>
+                    <input type="text" name="location" class="form-control" id="inputPassword2" placeholder="Enter Zip Code" autocomplete="off">
+                </div>
+                <button type="submit" class="btn mb-2">Find</button>
+            </form>
+        </div>
+       
     </div>
 </section>
 
