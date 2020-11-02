@@ -34,8 +34,6 @@ app.get("/", function (req, res) {
         getAnimalData.storeAnimalData(resp, animalsForAdoption);
       })
       .then(() => {
-        // console.log(animalsForAdoption);
-        // console.log(animalsForAdoption.length);
         res.render("home", { animals: animalsForAdoption });
         animalsForAdoption = [];
       });
@@ -52,7 +50,6 @@ app.post("/findAPet", function (req, res) {
     if(req.body.location) {
         zipCode = req.body.location;
     }
-  console.log(zipCode);
   async function getAnimal() {
     await client.animal
       .search({
@@ -64,8 +61,36 @@ app.post("/findAPet", function (req, res) {
         getAnimalData.storeAnimalData(resp, animalsForAdoption);
       })
       .then(() => {
-        //   console.log(animalsForAdoption[0]);
-        res.render("animal", { animals: animalsForAdoption, pagenumber: pageNumber });
+        res.render("animal", { animals: animalsForAdoption, pagenumber: pageNumber, pagePath: req.route.path });
+        animalsForAdoption = [];
+      });
+  }
+  getAnimal();
+});
+
+app.post("/findAPet/:Animal", function (req, res) {
+    if(req.body.previous === "") {
+        pageNumber--;
+    } else{
+        pageNumber++;
+    }
+    if(req.body.location) {
+        zipCode = req.body.location;
+    }
+  const animalType = req.params.Animal;
+  async function getAnimal() {
+    await client.animal
+      .search({
+        type: animalType,
+        page: pageNumber,
+        limit: 20,
+        location: zipCode,
+      })
+      .then((resp) => {
+        getAnimalData.storeAnimalData(resp, animalsForAdoption);
+      })
+      .then(() => {
+        res.render("animal", { animals: animalsForAdoption, pagenumber: pageNumber, pagePath: req.originalUrl });
         animalsForAdoption = [];
       });
   }
@@ -73,13 +98,11 @@ app.post("/findAPet", function (req, res) {
 });
 
 app.get("/adopt/:animalID", function(req,res) {
-    console.log(req.params)
     const selectedAnimal = req.params.animalID;
     async function getAnimal() {
         await client.animal
           .show(selectedAnimal)
           .then((resp) => {
-            //   console.log(resp.data.animal);
             const animalData = resp.data.animal
             res.render("adopt", { selectedAnimalData: animalData});
           })
@@ -88,13 +111,11 @@ app.get("/adopt/:animalID", function(req,res) {
 })
 
 app.post("/adopt/:animalID", function(req,res) {
-    console.log(req.params)
     const selectedAnimal = req.params.animalID;
     async function getAnimal() {
         await client.animal
           .show(selectedAnimal)
           .then((resp) => {
-            //   console.log(resp.data.animal);
             const animalData = resp.data.animal
             res.render("adopt", { selectedAnimalData: animalData});
           })

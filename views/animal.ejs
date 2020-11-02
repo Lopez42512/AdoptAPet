@@ -25,9 +25,10 @@
       </div>
       <% } %> <% }) %>
     </div>
-    <form action="/findAPet" method="post">
+    
+    <form action="<%= pagePath %>" method="post">
       <% if(pagenumber === 1) { %>
-      <button type="submit">Next Page</button>
+      <button style="border: none;" type="submit">Next Page<i class="fas fa-arrow-right"></i></button>
       <% } else { %>
       <button style="border: none;" type="submit" name="previous"><i class="fas fa-arrow-left"></i>Previous Page</button>
       <button style="border: none;" type="submit" name="next">Next Page<i class="fas fa-arrow-right"></i></button>

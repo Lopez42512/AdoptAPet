@@ -35,10 +35,14 @@
                 Dogs
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <form class="form-inline" action="/findAPet/Dog" method="post">
+                
+                    <div class="form-label form-group mx-sm-3 mb-2">
+                        <label for="inputzipCode" class="sr-only">Enter Zip Code</label>
+                        <input type="tel" name="location" class="zipForm form-control" id="inputPassword2" placeholder="Enter Zip Code" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn mb-2">Find Dogs Near You</button>
+                </form>
               </div>
             </li>
             <li class="nav-item dropdown">
@@ -54,13 +58,17 @@
                 Cats
               </a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Something else here</a>
+                <form class="form-inline zipForm" action="/findAPet/Cat" method="post">
+                
+                    <div class="form-group mx-sm-3 mb-2">
+                        <label for="inputzipCode" class="sr-only">Enter Zip Code</label>
+                        <input type="number" name="location" class="form-control" id="inputPassword2" placeholder="Enter Zip Code" autocomplete="off">
+                    </div>
+                    <button type="submit" class="btn mb-2">Find Cats Near You</button>
+                </form>
               </div>
             </li>
-            <li class="nav-item dropdown">
+            <!-- <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -85,7 +93,7 @@
                   </button>
                 </form>
               </div>
-            </li>
+            </li> -->
           </ul>
         </div>
       </nav>
