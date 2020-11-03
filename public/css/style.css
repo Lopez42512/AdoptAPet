@@ -143,6 +143,10 @@ img {
     top: 60%;
     left: 10%;
   }
+  #Adopt img {
+    
+    width: 80vw;
+}
 }
 @media only screen and (max-width: 450px) {
   .homeContainer {
@@ -161,4 +165,8 @@ img {
   #footer {
     height: 15vh;
   }
+  #Adopt img {
+    width: 99vw;
+    height: 300px;
+}
 }
