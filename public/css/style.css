@@ -86,6 +86,7 @@ img {
 
 /* Adopt A Pet Page */
 #Adopt img {
+  border-radius: 0;
     margin: auto;
     width: 40vw;
     height: 400px;
@@ -166,7 +167,7 @@ img {
     height: 15vh;
   }
   #Adopt img {
-    width: 99vw;
+    width: 100vw;
     height: 300px;
 }
 }

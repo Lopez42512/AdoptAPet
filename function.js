@@ -4,7 +4,6 @@ exports.storeAnimalData = function (resp, arr) {
     if (data.photos[0] === undefined) {
       // console.log("undefined");
     } else {
-      // console.log(data);
       const animal = {
         id: data.id,
         name: data.name,
