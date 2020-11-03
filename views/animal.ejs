@@ -8,6 +8,11 @@
         <img src="<%= animal.photo[0].full %>" class="card-img-top" alt="..." />
         <div class="card-body">
           <h5 class="card-title"><%= animal.name %></h5>
+          <div style="text-align:center" class="row">
+              <h6 style="padding-right: 0; text-align: right;" class="col-5"><%= animal.age %></h6>
+              <h6 style="padding: 0;" class="col-2">|</h6>
+              <h6 style="padding-left: 0; text-align: left;" class="col-5"><%= animal.sex %></h6>
+          </div>
           <h6>
             <%= animal.contact.address.city %>, <%= animal.contact.address.state
             %>

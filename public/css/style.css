@@ -69,7 +69,7 @@ a:hover {
   flex-flow: column wrap;
   align-items: center;
 }
-/* Card Display */
+/* Card Display on Find a Pet Page */
 .card {
   /* margin: 20px; */
   background-color: #eeeeee;
@@ -85,10 +85,17 @@ img {
 }
 
 /* Adopt A Pet Page */
+#Adopt img {
+    margin: auto;
+    width: 40vw;
+    height: 400px;
+}
+
 .carousel {
   margin: auto;
-  width: 50%;
+  width: 100%;
 }
+
 
 /* Body */
 #body {

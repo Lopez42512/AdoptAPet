@@ -4,6 +4,7 @@ exports.storeAnimalData = function (resp, arr) {
     if (data.photos[0] === undefined) {
       // console.log("undefined");
     } else {
+      // console.log(data);
       const animal = {
         id: data.id,
         name: data.name,
@@ -15,6 +16,10 @@ exports.storeAnimalData = function (resp, arr) {
         desc: data.description,
         contact: data.contact,
         photo: data.photos,
+        attr: data.attributes,
+        breed: data.breeds.primary,
+        environment: data.environment,
+        characteristic: data.tags
       };
       arr.push(animal);
     }
