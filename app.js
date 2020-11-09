@@ -5,6 +5,7 @@ const https = require("https");
 const favicon = require("express-favicon");
 const petfinder = require("@petfinder/petfinder-js");
 const keys = require(__dirname + "/keys.js");
+// Function that stores the searched animal data into the animalsForAdoption array
 const getAnimalData = require(__dirname + "/function.js");
 
 const apiKey = keys.apiKey();
@@ -24,21 +25,7 @@ let pageNumber = 0;
 let zipCode;
 
 app.get("/", function (req, res) {
-  pageNumber = 0;
-  async function getAnimal() {
-    await client.animal
-      .search({
-        limit: 3,
-      })
-      .then((resp) => {
-        getAnimalData.storeAnimalData(resp, animalsForAdoption);
-      })
-      .then(() => {
-        res.render("home", { animals: animalsForAdoption });
-        animalsForAdoption = [];
-      });
-  }
-  getAnimal();
+  res.render("home")
 });
 
 app.post("/findAPet", function (req, res) {
@@ -50,6 +37,7 @@ app.post("/findAPet", function (req, res) {
     if(req.body.location) {
         zipCode = req.body.location;
     }
+    console.log(pageNumber);
   async function getAnimal() {
     await client.animal
       .search({
